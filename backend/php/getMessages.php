@@ -21,8 +21,16 @@
 	} else {
 		if ($conn->query($sql) == TRUE) {
 			$result = $conn->query($sql);
-			$row = $result->fetch_assoc();
-			returnMessages($row);
+			// $row = $result->fetch_assoc();
+			// returnMessages($row);
+			if ($result->num_rows > 0) {
+			// output data of each row
+				while($row = $result->fetch_assoc()) {
+					echo "username: " . $row["username"]. " - emoticon: " . $row["emoticon"]. " " . $row["msg"]. "<br>";
+				}
+				} else {
+					echo "0 results";
+				}
 		} else {
 			echo $sql . "\n" . $conn->error;
 		}
@@ -37,8 +45,6 @@
 		} else {
 			echo "0 results";
 		}
-		$conn->close();
+		// $conn->close();
 	}
-
-
 ?>
