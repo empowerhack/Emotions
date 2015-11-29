@@ -25,7 +25,7 @@
 		
 		$sql = $sql . $username . "', '" . $emoticon . "', '" . $msg . "')";
 		if ($conn->query($sql) == TRUE) {
-			header("Location: /Emotions/frontend/moodmap.html"); 
+			header("Location: /emotions/mariza/viz1.html"); 
 		} else {
 			echo $sql . "\n" . $conn->error;
 		}
