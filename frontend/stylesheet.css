@@ -64,3 +64,10 @@ footer {
 
 #userbox {
 }
+
+#redtext {
+	font-size: 15px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #e74c3c;
+}
