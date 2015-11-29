@@ -25,7 +25,7 @@ body {
 	font-size: 35px;
 	margin-top: 50px;
 	margin-bottom: 50px;
-	color: #2980b9;
+	color: #1abc9c;
 }
 
 a {
@@ -43,10 +43,9 @@ a {
 
 #instructions {
 	font-size: 15px;
-	margin-top: 100px;
+	margin-top: 50px;
 	margin-bottom: 50px;
-	color: #3498db;
-	margin:0 20%;
+	color: #1abc9c;
 }
 
 #green {
@@ -64,5 +63,4 @@ footer {
 }
 
 #userbox {
-	visibility: hidden;
 }
