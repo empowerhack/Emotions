@@ -90,13 +90,13 @@ node.transition()
 
 // });
 
-function tick(e) {
-  node
-      .each(cluster(10 * e.alpha * e.alpha))
-      .each(collide(.5))
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; });
-}
+// function tick(e) {
+//   node
+//       .each(cluster(10 * e.alpha * e.alpha))
+//       .each(collide(.5))
+//       .attr("cx", function(d) { return d.x; })
+//       .attr("cy", function(d) { return d.y; });
+// }
 
 // Move d to be adjacent to the cluster node.
 function cluster(alpha) {
