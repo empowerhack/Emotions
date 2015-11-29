@@ -31,7 +31,7 @@
 			header("Location: /Emotions/frontend/insertmood.html"); 
 			// echo "Successful Login";
 		} else {
-			header("Location: /Emotions/frontend/login.html");
+			header("Location: /Emotions/frontend/loginfail.html");
 			// echo "Failure mate";
 		}
 	}

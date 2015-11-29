@@ -25,7 +25,7 @@
 		
 		$sql = $sql . $username . "', '" . $emoticon . "', '" . $msg . "')";
 		if ($conn->query($sql) == TRUE) {
-			echo "Message updated for " . $username;
+			header("Location: /Emotions/frontend/moodmap.html"); 
 		} else {
 			echo $sql . "\n" . $conn->error;
 		}
