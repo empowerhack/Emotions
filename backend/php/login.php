@@ -18,7 +18,7 @@
 	} else {
 		$username = $_POST["username"];
 		$password = $_POST["password"];
-		echo "Connected successfully\n" . $username . ", " . $password . "\n";
+		// echo "Connected successfully\n" . $username . ", \n Pass: " . $password . "\n";
 	}
 
 	if( $_POST["username"] && $_POST["password"] ){
@@ -27,21 +27,13 @@
 
 		$row = $result->fetch_assoc();
 		if(password_verify($password, $row["password"])) {
-			echo "Successful Login";
 			$_SESSION["loggedUser"] = $username;
-			paradigm();
+			header("Location: /Emotions/frontend/insertmood.html"); 
+			// echo "Successful Login";
 		} else {
-			echo "Failure mate";
+			header("Location: /Emotions/frontend/login.html");
+			// echo "Failure mate";
 		}
-	}
-
-	function paradigm() {
-		echo "<h1> Hello World </h1>
-		<form action='updateMessage.php' method='post'>
-					Emoticon: <input type='text' name='emoticon'><br>
-					Message: <input type='text' name='msg'><br>
-			<input type='submit'>
-		</form>";
 	}
 ?>
 
