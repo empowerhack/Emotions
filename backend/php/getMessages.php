@@ -19,15 +19,25 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} else {
-		$username = $_SESSION["loggedUser"];
-		$emoticon = $_POST["emoticon"];
-		$msg = $_POST["msg"];
-		
 		if ($conn->query($sql) == TRUE) {
-			echo "Message updated for " . $username;
+			$result = $conn->query($sql);
+			$row = $result->fetch_assoc();
+			returnMessages($row);
 		} else {
 			echo $sql . "\n" . $conn->error;
 		}
+	}
+
+	function returnMessages($msgs) {
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				echo "username: " . $row["username"]. " - emoticon: " . $row["emoticon"]. " " . $row["msg"]. "<br>";
+			}
+		} else {
+			echo "0 results";
+		}
+		$conn->close();
 	}
 
 
